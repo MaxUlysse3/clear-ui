@@ -23,7 +23,7 @@ RowLayout {
 			Layout.bottomMargin: 3
 			color: {
 				if (modelData.active) {
-					return "#955cf2";
+					return "#9c9c9c";
 				} else {
 					return "transparent"
 				}

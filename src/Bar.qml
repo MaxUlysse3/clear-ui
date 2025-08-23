@@ -24,8 +24,10 @@ Scope {
 
 		Rectangle {
 			anchors.fill: parent
-			radius: 5
-			color: "#888a44fc"
+			radius: 15
+			border.color: "black"
+			border.width: 1
+			color: "#665c5c5c"
 
 			ClockWidget {
 				id: clock
@@ -41,16 +43,16 @@ Scope {
 				}
 			}
 
-			RightSide {
-				// anchors.centerIn: parent
-				// implicitHeight: 50
-				anchors {
-					right: parent.right
-					top: parent.top
-					bottom: parent.bottom
-					rightMargin: 3
-				}
-			}
+			// RightSide {
+			// 	// anchors.centerIn: parent
+			// 	// implicitHeight: 50
+			// 	anchors {
+			// 		right: parent.right
+			// 		top: parent.top
+			// 		bottom: parent.bottom
+			// 		rightMargin: 3
+			// 	}
+			// }
 		}
 	}
 }
