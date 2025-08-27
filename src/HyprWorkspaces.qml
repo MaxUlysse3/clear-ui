@@ -15,7 +15,8 @@ RowLayout {
 		model: Hyprland.workspaces
 
 		Rectangle {
-			visible: modelData.id !== -99
+			visible: modelData.id >= 0
+			// visible: false
 			radius: width / 2
 			Layout.fillHeight: true
 			Layout.preferredWidth: height
@@ -36,7 +37,7 @@ RowLayout {
 
 			Text {
 				text: modelData.name
-				// text: "p"
+				// text: test(modelData.name, "/special:/")
 				anchors.centerIn: parent
 			}
 		}
