@@ -3,22 +3,36 @@ import QtQuick
 import Quickshell.Hyprland
 import Quickshell
 
-WlSessionLock {
-	id: lock
-
-	WlSessionLockSurface {
-		LockSurface {
-			
-		}
+Scope {
+	LockContext {
+		id: lcontext
+		onUnlocked: lock.locked = false
 	}
 
-	// GlobalShortcut {
-	// 	id: lockshortcut
-	// 	name: "lockscreen"
-	// 	description: "Lock the screen"
-	// 	onPressed: {
-	// 		debug.text = "aaaa";
-	// 		lock.locked = true;
-	// 	}
-	// }
+	Text {
+		id: debug
+		text: "toto"
+	}
+
+	WlSessionLock {
+		id: lock
+
+		WlSessionLockSurface {
+			LockSurface {
+				context: lcontext
+			}
+		}
+
+
+
+	}
+
+	GlobalShortcut {
+		id: lockshortcut2
+		name: "lockscreen"
+		description: "Lock the screen"
+		onPressed: {
+			lock.locked = true;
+		}
+	}
 }

@@ -54,23 +54,12 @@ Scope {
 			// 		rightMargin: 3
 			// 	}
 			// }
-			Text {
-				id: debug
-				text: "bb"
-			}
-			GlobalShortcut {
-				id: lockshortcut
-				name: "lockscreen"
-				description: "Lock the screen"
-				onPressed: parent.debug.text = "aaaaa"
-			}
 		}
 
 		Volume {
 		}
 
 		LockScreen {
-
 		}
 
 	}
