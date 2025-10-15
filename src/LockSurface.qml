@@ -26,7 +26,7 @@ Rectangle {
 	}
 
 	Button {
-		visible: true
+		visible: false
 		text: "unlock"
 		onClicked: lock.locked = false
 	}
