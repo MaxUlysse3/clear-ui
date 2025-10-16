@@ -32,6 +32,7 @@ Scope {
 
 		onCompleted: result => {
 			if (result === PamResult.Success) {
+				root.currentText = ""
 				root.unlocked();
 			} else {
 				root.currentText = "";
