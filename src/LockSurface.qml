@@ -11,6 +11,7 @@ Rectangle {
 
 	TextField {
 		id: txt
+		activeFocusOnTab: true
 		anchors.centerIn: parent
 		echoMode: TextInput.Password
 		font.pixelSize: 12
@@ -18,7 +19,7 @@ Rectangle {
 		implicitHeight: 50
 		implicitWidth: 500
 
-		enabled: !context.unlockInPreogress
+		enabled: !context.unlockInProgress
 		onTextEdited: context.currentText = this.text
 		onAccepted: {
 			context.tryUnlock()
