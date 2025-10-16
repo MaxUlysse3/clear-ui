@@ -3,6 +3,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 
 Rectangle {
+	id: root
 	color: "#00000000"
 	visible: true
 	anchors.fill: parent
@@ -23,6 +24,14 @@ Rectangle {
 		onTextEdited: context.currentText = this.text
 		onAccepted: {
 			context.tryUnlock()
+		}
+	}
+
+	Connections {
+		target: root.context
+
+		function onCurrentTextChanged() {
+			txt.text = root.context.currentText
 		}
 	}
 
