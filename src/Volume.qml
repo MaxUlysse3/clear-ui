@@ -29,7 +29,11 @@ PopupWindow {
 			implicitHeight: 5
 			implicitWidth: 140
 			Rectangle {
-				color: "white"
+				color: if (Pipewire.defaultAudioSink.audio.muted) {
+					"red"
+				} else {
+					"white"
+				}
 				radius: height / 2
 				anchors.top: parent.top
 				anchors.bottom: parent.bottom
@@ -57,6 +61,9 @@ PopupWindow {
 	Connections {
 		target: Pipewire.defaultAudioSink.audio
 		function onVolumeChanged() {
+			root.showWindow()
+		}
+		function onMutedChanged() {
 			root.showWindow()
 		}
 	}
