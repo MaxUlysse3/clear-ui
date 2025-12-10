@@ -9,7 +9,7 @@ PopupWindow {
 	anchor.window: barWindow
 	anchor.rect.x: barWindow.width / 2 - width / 2
 	anchor.rect.y: - barWindow.height - 100
-	visible: true
+	visible: frame.visible
 	implicitHeight: 50
 	implicitWidth: 200
 	color: "transparent"
