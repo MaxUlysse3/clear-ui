@@ -8,7 +8,7 @@ RowLayout {
 	id: root
 	spacing: 6
 	layoutDirection: Qt.LeftToRight
-	uniformCellSizes: true
+	uniformCellSizes: false
 
 	Repeater {
 		id: father
@@ -43,27 +43,9 @@ RowLayout {
 		}
 	}
 
-	Rectangle {
+	WorkspaceSwitcher {
 		Layout.fillHeight: true
-		Layout.preferredWidth: height
 		Layout.topMargin: 3
 		Layout.bottomMargin: 3
-
-		radius: height / 2
-		color: "transparent"
-
-
-		border {
-			color: "lime"
-			width: 2
-		}
-
-		Text {
-			text: "+"
-			anchors.centerIn: parent
-			color: "lime"
-		}
-
-		visible: (Hyprland.focusedWorkspace.id === -99)
 	}
 }
