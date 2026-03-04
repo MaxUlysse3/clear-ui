@@ -6,7 +6,7 @@ import Quickshell.Hyprland
 
 
 Rectangle {
-	readonly property bool active: sensors.tablet_active
+	readonly property bool active: TabletSensors.tablet_active
 
 	visible: active
 	color: "transparent"
@@ -14,10 +14,6 @@ Rectangle {
 	border.color: "#555555"
 	border.width: 2
 	implicitWidth: 150
-
-	TabletModeController {
-		id: sensors
-	}
 
 	MouseArea {
 		id: mouse

@@ -1,8 +1,10 @@
+pragma Singleton
+
 import Quickshell
 import QtQuick
 import Quickshell.Io
 
-Scope {
+Singleton {
 	property int angle: 0
 	property bool tablet_active: false
 	property bool tablet_possible: false
