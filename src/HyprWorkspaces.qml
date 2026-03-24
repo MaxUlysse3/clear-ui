@@ -54,4 +54,10 @@ RowLayout {
 		Layout.topMargin: 3
 		Layout.bottomMargin: 3
 	}
+
+	Indicators {
+		Layout.fillHeight: true
+		Layout.topMargin: 3
+		Layout.bottomMargin: 3
+	}
 }
