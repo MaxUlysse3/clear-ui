@@ -9,7 +9,8 @@ PopupWindow {
 	anchor.window: barWindow
 	anchor.rect.x: barWindow.width / 2 - width / 2
 	anchor.rect.y: - barWindow.height - 100
-	visible: frame.visible
+	// visible: timer.running
+	visible: false
 	implicitHeight: 50
 	implicitWidth: 200
 	color: "transparent"
@@ -17,6 +18,7 @@ PopupWindow {
 	Rectangle {
 		id: frame
 		visible: timer.running
+		// visible: true
 		color: "#bb555555"
 		radius: height / 2
 		border.width: 2
@@ -46,7 +48,7 @@ PopupWindow {
 		id: timer
 		interval: 1000
 		repeat: false
-		// running: true
+		onTriggered: root.visible = false
 	}
 
 	PwObjectTracker {
@@ -69,6 +71,7 @@ PopupWindow {
 	}
 
 	function showWindow() {
+		root.visible = true
 		timer.restart()
 	}
 }
