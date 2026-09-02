@@ -6,8 +6,8 @@ import QtQuick.Controls
 
 Rectangle {
 	id: root
-	readonly property bool active: TabletSensors.tablet_active
-	// readonly property bool active: true
+	// readonly property bool active: TabletSensors.tablet_active
+	readonly property bool active: true
 	readonly property bool reversed: TabletSensors.reversed
 	property bool auto_rotate: false
 	property int rotationState: 0
@@ -21,7 +21,7 @@ Rectangle {
 	border.width: 2
 
 	function rotate() {
-		var scale = Hyprland.focusedMonitor.scale
+		// var scale = Hyprland.focusedMonitor.scale
 		// var cmds = [[ "hyprctl", `keyword monitor ,preferred, auto, 1, transform, ${rotationState}` ],
 		// 	["hyprctl", `keyword input:tablet:transform ${rotationState}`],
 		// 	["hyprctl", `keyword input:touchdevice:transform ${rotationState}`]
@@ -31,7 +31,7 @@ Rectangle {
 		// 	rotator.command = c
 		// 	rotator.running = true
 		// }
-		screenRotator.command = [ "hyprctl", `keyword monitor ,preferred, auto, ${scale}, transform, ${rotationState}` ]
+		screenRotator.command = [ "hyprctl", "eval", `hl.monitor({ output = "eDP-1", transform = ${rotationState} })` ]
 		tabletRotator.command = ["hyprctl", `keyword input:tablet:transform ${rotationState}`]
 		touchdeviceRotator.command = ["hyprctl", `keyword input:touchdevice:transform ${rotationState}`]
 
@@ -158,6 +158,6 @@ Rectangle {
 
 	// Text {
 	// 	id: label
-	// 	text: TabletSensors.angle
+	// 	text: ""
 	// }
 }
