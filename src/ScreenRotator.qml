@@ -6,8 +6,8 @@ import QtQuick.Controls
 
 Rectangle {
 	id: root
-	// readonly property bool active: TabletSensors.tablet_active
-	readonly property bool active: true
+	readonly property bool active: TabletSensors.tablet_active
+	// readonly property bool active: true
 	readonly property bool reversed: TabletSensors.reversed
 	property bool auto_rotate: false
 	property int rotationState: 0
