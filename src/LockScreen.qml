@@ -34,7 +34,7 @@ Scope {
 
 	Process {
 		id: dpms_off
-		command: [ "hyprctl", "dispatch dpms off" ]
+		command: [ "hyprctl", "eval", `hl.dispatch(hl.dsp.dpms( { monitor = "eDP-1", action = "off" } ))`]
 		running: false
 	}
 
