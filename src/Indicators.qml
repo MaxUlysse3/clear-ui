@@ -48,9 +48,10 @@ RowLayout {
 			stdout: StdioCollector {
 				onStreamFinished: {
 					const txt = this.text;
-					const regex = /int: ./;
+					const regex = /bool: ./;
 					const val = regex.exec(txt)[0].slice(-1);
-					if (val === "0") {
+					// label.text = val
+					if (val === "f") {
 						touch_enable.color = "#e04747";
 					} else {
 						touch_enable.color = "transparent";
@@ -58,6 +59,11 @@ RowLayout {
 				}
 			}
 		}
+
+		// Text {
+		// 	id: label
+		// 	text: ""
+		// }
 
 		Timer {
 			id: poll_state
