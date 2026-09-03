@@ -32,8 +32,8 @@ Rectangle {
 		// 	rotator.running = true
 		// }
 		screenRotator.command = [ "hyprctl", "eval", `hl.monitor({ output = "eDP-1", transform = ${rotationState} })` ]
-		tabletRotator.command = ["hyprctl", `keyword input:tablet:transform ${rotationState}`]
-		touchdeviceRotator.command = ["hyprctl", `keyword input:touchdevice:transform ${rotationState}`]
+		tabletRotator.command = ["hyprctl", "eval", `hl.config( { input = { tablet = { transform = ${rotationState} } } } )`]
+		touchdeviceRotator.command = ["hyprctl", "eval", `hl.config( { input = { touchdevice = { transform = ${rotationState} } } } )`]
 
 		screenRotator.running = true
 		tabletRotator.running = true
