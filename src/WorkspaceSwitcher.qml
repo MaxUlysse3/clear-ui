@@ -6,7 +6,8 @@ import Quickshell.Hyprland
 
 
 Rectangle {
-	readonly property bool active: TabletSensors.tablet_active
+	// readonly property bool active: TabletSensors.tablet_active
+	readonly property bool active: true
 
 	visible: active
 	color: "transparent"
@@ -21,13 +22,13 @@ Rectangle {
 		function swipedLeft() {
 			var act = Hyprland.focusedWorkspace.id;
 			var next = act == 1 ? 10 : act - 1
-			Hyprland.dispatch(`workspace ${next}`)
+			Hyprland.dispatch(`hl.dsp.focus( { workspace = ${next} } )`)
 		}
 
 		function swipedRight() {
 			var act = Hyprland.focusedWorkspace.id;
 			var next = act == 10 ? 1 : act + 1
-			Hyprland.dispatch(`workspace ${next}`)
+			Hyprland.dispatch(`hl.dsp.focus( { workspace = ${next} } )`)
 		}
 
 		property real beganOnX
@@ -50,8 +51,9 @@ Rectangle {
 	}
 
 	Text {
+		visible: false
 		id: label
-		// text: sensors.angle
+		text: "prout"
 	}
 
 
