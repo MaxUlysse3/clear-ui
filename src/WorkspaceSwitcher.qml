@@ -6,8 +6,8 @@ import Quickshell.Hyprland
 
 
 Rectangle {
-	// readonly property bool active: TabletSensors.tablet_active
-	readonly property bool active: true
+	readonly property bool active: TabletSensors.tablet_active
+	// readonly property bool active: true
 
 	visible: active
 	color: "transparent"
