@@ -33,7 +33,7 @@ RowLayout {
 		Process {
 			id: enable_touch
 			running: false
-			command: [ "hyprctl", "keyword input:touchdevice:enabled true" ]
+			command: [ "hyprctl", "eval", "hl.config( { input = { touchdevice = { enabled = 1}}})" ]
 			// stdout: StdioCollector {
 			// 	onStreamFinished: {
 			// 		console.log(this.text)
