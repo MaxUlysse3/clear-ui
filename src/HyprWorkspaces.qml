@@ -15,7 +15,7 @@ RowLayout {
 		model: Hyprland.workspaces
 
 		Rectangle {
-			visible: modelData.id >= 0
+			visible: modelData.id > 0
 			// visible: false
 			radius: width / 2
 			Layout.fillHeight: true
